@@ -1,5 +1,10 @@
 # TestXX - Modern Full-Stack Application
 
+[![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8)](https://tailwindcss.com/)
+[![Express](https://img.shields.io/badge/Express-5-green)](https://expressjs.com/)
+
 Ultra-modern full-stack starter with interactive frontend and powerful backend.
 
 ## 🚀 Tech Stack
