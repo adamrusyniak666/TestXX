@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TestXX - Modern Full-Stack Application
 
-## Getting Started
+Ultra-modern full-stack starter with interactive frontend and powerful backend.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Frontend
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS v4** - Utility-first styling
+- **Framer Motion** - Advanced animations
+- **Turbopack** - Lightning-fast bundler
+
+### Backend
+- **Express.js** - Node.js web framework
+- **TypeScript** - Type-safe API development
+- **CORS** - Cross-origin resource sharing
+- **dotenv** - Environment configuration
+
+### Development Tools
+- **ESLint** - Code linting
+- **Prettier** - Code formatting
+- **ts-node** - TypeScript execution
+- **Concurrently** - Run multiple processes
+
+## 📁 Project Structure
+
+```
+testxx/
+├── app/              # Next.js frontend (App Router)
+│   ├── layout.tsx    # Root layout
+│   ├── page.tsx      # Home page
+│   └── globals.css   # Global styles
+├── server/           # Express backend
+│   ├── index.ts      # API server
+│   └── tsconfig.json # Backend TypeScript config
+├── public/           # Static assets
+├── .env.local        # Environment variables
+└── package.json      # Dependencies & scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Run frontend only (port 3000):**
+```bash
+npm run dev
+```
 
-## Learn More
+**Run backend only (port 3001):**
+```bash
+npm run server
+```
 
-To learn more about Next.js, take a look at the following resources:
+**Run both frontend + backend:**
+```bash
+npm run dev:all
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Build for production:**
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+**Start production server:**
+```bash
+npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📡 API Endpoints
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The backend provides these default endpoints:
+
+- `GET /api/health` - Health check
+- `GET /api/test` - Test endpoint
+
+Access at: `http://localhost:3001/api/...`
+
+## 📝 Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start Next.js frontend (port 3000) |
+| `npm run server` | Start Express backend (port 3001) |
+| `npm run dev:all` | Start both frontend & backend |
+| `npm run build` | Build for production |
+| `npm start` | Start production server |
+| `npm run lint` | Run ESLint |
+
+## 🌐 URLs
+
+- **Frontend:** http://localhost:3000
+- **Backend API:** http://localhost:3001
+- **API Health:** http://localhost:3001/api/health
+
+## 📚 Next Steps
+
+This is a clean, production-ready starter. Ready for your custom implementation:
+
+1. Add your React components in `/app`
+2. Create API routes in `/server`
+3. Install additional packages as needed
+4. Build your amazing application! 🚀
+
+---
+
+**Ready to build something amazing!** 🎉
+
