@@ -6,23 +6,23 @@ import { useRef } from 'react';
 const facts = [
   {
     icon: '🔥',
-    title: 'Oddech Ognia',
-    description: 'Smoki mogą wytworzyć płomienie o temperaturze ponad 3000°C',
+    title: 'Ancient Fire',
+    description: 'Dragons forge flames reaching temperatures of 3000°C',
   },
   {
     icon: '⚡',
-    title: 'Prędkość Lotu',
-    description: 'Najszybsze smoki osiągają prędkość do 300 km/h',
+    title: 'Swift Flight',
+    description: 'Elite guardians achieve velocities exceeding 300 km/h',
   },
   {
     icon: '💎',
-    title: 'Skarby',
-    description: 'Instynkt zbierania skarbów jest wpisany w ich DNA',
+    title: 'Treasure Keepers',
+    description: 'Innate guardians of precious artifacts and wealth',
   },
   {
     icon: '🧠',
-    title: 'Inteligencja',
-    description: 'Starsze smoki posiadają mądrość setek lat',
+    title: 'Timeless Wisdom',
+    description: 'Elder dragons possess knowledge spanning centuries',
   },
 ];
 
@@ -40,51 +40,56 @@ export default function DragonFacts() {
   return (
     <section
       ref={containerRef}
-      className="relative py-32 px-4 bg-gradient-to-b from-black to-gray-900 overflow-hidden"
+      className="relative py-32 px-4 bg-gradient-to-b from-black to-neutral-950 overflow-hidden"
     >
-      {/* Parallax Background Elements */}
+      {/* Subtle Parallax Elements */}
       <motion.div
         style={{ y: y1, opacity }}
-        className="absolute top-20 left-10 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl"
+        className="absolute top-20 left-10 w-32 h-32 bg-amber-900/10 rounded-full blur-3xl"
       />
       <motion.div
         style={{ y: y2, opacity }}
-        className="absolute bottom-20 right-10 w-40 h-40 bg-red-500/10 rounded-full blur-3xl"
+        className="absolute bottom-20 right-10 w-40 h-40 bg-yellow-900/10 rounded-full blur-3xl"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <motion.h2
+        <motion.div
           style={{ opacity }}
-          className="text-5xl md:text-6xl font-black text-center bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent mb-20"
+          className="text-center mb-20"
         >
-          Smocze Tajemnice
-        </motion.h2>
+          <h2 className="serif-display text-5xl md:text-6xl font-bold bg-gradient-to-b from-amber-200 to-amber-900 bg-clip-text text-transparent tracking-tight">
+            Ancient Knowledge
+          </h2>
+          <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-700 to-transparent mx-auto mt-6" />
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {facts.map((fact, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10, scale: 1.05 }}
+              transition={{ delay: index * 0.1, duration: 0.8 }}
+              whileHover={{ y: -5 }}
               className="relative group"
             >
-              <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 h-full">
-                {/* Hover Glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+              <div className="relative backdrop-blur-sm bg-neutral-900/30 border border-neutral-800/50 rounded-sm p-8 h-full transition-all duration-500 group-hover:border-amber-900/50">
+                {/* Subtle Hover Glow */}
+                <div className="absolute -inset-px bg-gradient-to-b from-amber-900/0 to-amber-900/10 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="relative">
                   <motion.div
-                    whileHover={{ rotate: 360, scale: 1.2 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-6xl mb-4"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-5xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity"
                   >
                     {fact.icon}
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{fact.title}</h3>
-                  <p className="text-gray-400">{fact.description}</p>
+                  <h3 className="serif-display text-xl font-semibold text-amber-100 mb-3 tracking-tight">
+                    {fact.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{fact.description}</p>
                 </div>
               </div>
             </motion.div>

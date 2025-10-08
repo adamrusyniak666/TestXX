@@ -24,174 +24,181 @@ export default function JoinGuild() {
     <section
       id="join"
       ref={ref}
-      className="relative py-32 px-4 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden"
+      className="relative py-32 px-4 bg-gradient-to-b from-neutral-950 via-black to-black overflow-hidden"
     >
-      {/* Animated Background */}
+      {/* Elegant Animated Background */}
       <div className="absolute inset-0">
         <motion.div
           animate={{
             rotate: [0, 360],
           }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-full blur-3xl"
+          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-amber-950/10 to-yellow-950/10 rounded-full blur-3xl"
         />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative z-10 max-w-3xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1 }}
           className="text-center mb-16"
         >
-          <h2 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-orange-400 via-red-500 to-yellow-400 bg-clip-text text-transparent mb-6">
-            Dołącz do Smoczej Gildii
+          <h2 className="serif-display text-5xl md:text-7xl font-bold bg-gradient-to-b from-amber-200 to-amber-900 bg-clip-text text-transparent mb-6 tracking-tight">
+            Join The Guild
           </h2>
-          <p className="text-xl text-gray-400">
-            Stań się częścią elitarnej grupy poskramiaczy smoków
+          <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-700 to-transparent mx-auto mb-6" />
+          <p className="serif-elegant text-xl text-gray-400 tracking-wide">
+            Become part of an elite society of dragon masters
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 1, delay: 0.2 }}
           className="relative"
         >
-          {/* Glassmorphism Card */}
-          <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
-            {/* Glow Effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl blur-xl opacity-20" />
-
-            <form onSubmit={handleSubmit} className="relative space-y-6">
+          {/* Premium Form Container */}
+          <div className="relative backdrop-blur-sm bg-neutral-900/40 border border-neutral-800/50 rounded-sm p-10 md:p-14 shadow-2xl">
+            <form onSubmit={handleSubmit} className="relative space-y-8">
               {/* Name Input */}
               <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={isInView ? { x: 0, opacity: 1 } : {}}
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: 0.3 }}
               >
-                <label className="block text-white font-semibold mb-2">Twoje Imię</label>
+                <label className="block text-amber-100 text-sm tracking-widest uppercase mb-3 font-light">
+                  Full Name
+                </label>
                 <input
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-300"
-                  placeholder="Wprowadź swoje imię"
+                  className="w-full px-6 py-4 bg-black/50 border border-neutral-700/50 rounded-sm text-gray-300 placeholder-gray-600 focus:outline-none focus:border-amber-800/50 transition-all duration-300 serif-elegant text-lg"
+                  placeholder="Enter your name"
                 />
               </motion.div>
 
               {/* Email Input */}
               <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={isInView ? { x: 0, opacity: 1 } : {}}
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: 0.4 }}
               >
-                <label className="block text-white font-semibold mb-2">Email</label>
+                <label className="block text-amber-100 text-sm tracking-widest uppercase mb-3 font-light">
+                  Email Address
+                </label>
                 <input
                   type="email"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-300"
-                  placeholder="twoj@email.com"
+                  className="w-full px-6 py-4 bg-black/50 border border-neutral-700/50 rounded-sm text-gray-300 placeholder-gray-600 focus:outline-none focus:border-amber-800/50 transition-all duration-300 serif-elegant text-lg"
+                  placeholder="your@email.com"
                 />
               </motion.div>
 
               {/* Dragon Type Select */}
               <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={isInView ? { x: 0, opacity: 1 } : {}}
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: 0.5 }}
               >
-                <label className="block text-white font-semibold mb-2">
-                  Preferowany Typ Smoka
+                <label className="block text-amber-100 text-sm tracking-widest uppercase mb-3 font-light">
+                  Dragon Affinity
                 </label>
                 <select
                   required
                   value={formData.dragonType}
                   onChange={(e) => setFormData({ ...formData, dragonType: e.target.value })}
-                  className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-300"
+                  className="w-full px-6 py-4 bg-black/50 border border-neutral-700/50 rounded-sm text-gray-300 focus:outline-none focus:border-amber-800/50 transition-all duration-300 serif-elegant text-lg"
                 >
-                  <option value="" className="bg-gray-900">
-                    Wybierz typ smoka
+                  <option value="" className="bg-neutral-950">
+                    Select your affinity
                   </option>
-                  <option value="fire" className="bg-gray-900">
-                    🔥 Ognisty
+                  <option value="fire" className="bg-neutral-950">
+                    Fire Guardian
                   </option>
-                  <option value="ice" className="bg-gray-900">
-                    ❄️ Lodowy
+                  <option value="ice" className="bg-neutral-950">
+                    Ice Warden
                   </option>
-                  <option value="storm" className="bg-gray-900">
-                    ⚡ Burzowy
+                  <option value="storm" className="bg-neutral-950">
+                    Sky Sovereign
                   </option>
-                  <option value="shadow" className="bg-gray-900">
-                    🌑 Cienia
+                  <option value="shadow" className="bg-neutral-950">
+                    Night Stalker
                   </option>
-                  <option value="earth" className="bg-gray-900">
-                    🌿 Ziemny
+                  <option value="earth" className="bg-neutral-950">
+                    Earth Keeper
                   </option>
                 </select>
               </motion.div>
 
               {/* Experience Textarea */}
               <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={isInView ? { x: 0, opacity: 1 } : {}}
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: 0.6 }}
               >
-                <label className="block text-white font-semibold mb-2">
-                  Dlaczego chcesz dołączyć?
+                <label className="block text-amber-100 text-sm tracking-widest uppercase mb-3 font-light">
+                  Your Heritage
                 </label>
                 <textarea
                   required
                   value={formData.experience}
                   onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
-                  rows={4}
-                  className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-300 resize-none"
-                  placeholder="Opowiedz nam swoją historię..."
+                  rows={5}
+                  className="w-full px-6 py-4 bg-black/50 border border-neutral-700/50 rounded-sm text-gray-300 placeholder-gray-600 focus:outline-none focus:border-amber-800/50 transition-all duration-300 resize-none serif-elegant text-lg leading-relaxed"
+                  placeholder="Share your story and lineage..."
                 />
               </motion.div>
 
               {/* Submit Button */}
               <motion.button
-                initial={{ y: 50, opacity: 0 }}
-                animate={isInView ? { y: 0, opacity: 1 } : {}}
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: 0.7 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full px-8 py-6 bg-gradient-to-r from-orange-600 to-red-600 text-white text-xl font-bold rounded-xl hover:from-orange-700 hover:to-red-700 transition-all duration-300 shadow-2xl relative overflow-hidden group"
+                className="group relative w-full px-8 py-5 bg-transparent border-2 border-amber-800/50 text-amber-100 text-sm font-medium tracking-widest uppercase rounded-sm hover:border-amber-700 transition-all duration-500 overflow-hidden"
               >
                 <motion.div
-                  className="absolute inset-0 bg-white/20"
+                  className="absolute inset-0 bg-gradient-to-r from-amber-950/30 to-yellow-950/30"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.8 }}
                 />
-                <span className="relative z-10">Dołącz Teraz</span>
+                <span className="relative z-10">Submit Application</span>
               </motion.button>
             </form>
 
             {/* Success Message */}
             {submitted && (
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
-                className="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm rounded-3xl"
+                className="absolute inset-0 flex items-center justify-center bg-black/90 backdrop-blur-md rounded-sm"
               >
-                <div className="text-center">
+                <div className="text-center px-6">
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    transition={{ type: 'spring', bounce: 0.5 }}
-                    className="text-6xl mb-4"
+                    transition={{ type: 'spring', bounce: 0.4, delay: 0.1 }}
+                    className="text-7xl mb-6"
                   >
                     🐉
                   </motion.div>
-                  <h3 className="text-3xl font-bold text-white mb-2">Witamy w Gildii!</h3>
-                  <p className="text-gray-400">Wkrótce otrzymasz wiadomość z dalszymi instrukcjami</p>
+                  <h3 className="serif-display text-3xl font-semibold text-amber-100 mb-3">
+                    Welcome to The Guild
+                  </h3>
+                  <div className="w-24 h-px bg-gradient-to-r from-transparent via-amber-700 to-transparent mx-auto mb-4" />
+                  <p className="serif-elegant text-gray-400 text-lg">
+                    Your application has been received
+                  </p>
                 </div>
               </motion.div>
             )}
