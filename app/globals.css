@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -15,7 +14,7 @@ body {
   background: #0a0a0a;
   color: #e5e5e5;
   overflow-x: hidden;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
 
 /* Custom Scrollbar - Elegant */
@@ -38,9 +37,9 @@ body {
 
 /* Premium Typography */
 .serif-display {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-playfair), serif;
 }
 
 .serif-elegant {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-cormorant), serif;
 }
